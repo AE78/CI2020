@@ -1,3 +1,8 @@
-         <em>&copy; 2015</em>
-        </body>
+
+<div class="jumbotron text-center">
+			<em>&copy; 2020 OldGold.com</em>
+		</div>
+
+	</body>
+
 </html>

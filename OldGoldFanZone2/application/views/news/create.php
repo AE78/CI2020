@@ -1,8 +1,15 @@
-<h2><?php echo $title; ?></h2>
 
-<?php echo validation_errors(); ?>
+<div class="jumbotron text-center">
+  <h1>The Blog</h1>
+  <p>Lets Talk Wolves Then!</p>
+</div>
 
-<?php echo form_open('news/create'); ?>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Post Something</h3>
+		<?php echo validation_errors(); ?>
+		<?php echo form_open('news/create'); ?>
 
     <label for="title">Title</label>
     <input type="text" name="title" /><br />
@@ -10,9 +17,28 @@
     <label for="text">Text</label>
     <textarea name="text"></textarea><br />
 
-    <input type="submit" name="submit" value="Create news item" />
+    <input type="submit" name="submit" value="Post" />
 
-</form>
+	</form>
+
+
+      
+    </div>
+
+    <div class="col-sm-4">
+
+
+      <p>Lorem ipsum dolor..</p>
+    </div>
+
+    <div class="col-sm-4">
+      <h3>Popular Post</h3>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- There are only two things here that probably look unfamiliar to you: the form_open() function and the validation_errors() function.
 

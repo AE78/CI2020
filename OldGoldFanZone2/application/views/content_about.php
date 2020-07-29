@@ -77,15 +77,13 @@ function showPosition(position) {
 </script>
 	<!--API KEY - AIzaSyAsWlHyDBNk6Yk7GqwpwBMZIDZN4LagdIM -->
 
-<div class="jumbotron text-center">
 
-	<div class="container">
+	
 		<div id="MolMap" margin-top="30px">
 			<p>We are here</p>
 			<img src="MolMapAirView.jpg" class="rounded" alt="MolineuxMap" width="304" height="236">
 		</div>
-	</div>
-
+	
 <div id="MolPicandCoords"></div>
 	
 
@@ -117,7 +115,7 @@ function showPosition(position) {
   </tr>
 </table>
 
-</div>
+
 
 </div>
 </div>

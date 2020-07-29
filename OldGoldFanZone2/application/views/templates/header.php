@@ -16,37 +16,24 @@
     background: #aaa;
   }
 
-  <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+
   </style>
-  <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+
+  <script>
+function allowDrop(ev) {
+  ev.preventDefault();
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
 }
-</style>
+</script>
 
 </head>
         <body>

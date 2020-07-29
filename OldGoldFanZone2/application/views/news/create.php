@@ -7,17 +7,37 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
+    	
       <h3>Post Something</h3>
+      
 		<?php echo validation_errors(); ?>
 		<?php echo form_open('news/create'); ?>
-
+<span id="txtHint"></span>
     <label for="title">Title</label>
-    <input type="text" name="title" />
+    <input type="text" name="title" onkeyup="showHint(this.value)"/>
     <br>
     <label for="text">Text</label>
     <textarea name="text"></textarea>
     <br>
     <input type="submit" name="submit" value="Post" />
+
+    <script>
+	function showHint(str) {
+  	if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  		} else {
+    	var xmlhttp = new XMLHttpRequest();
+    	xmlhttp.onreadystatechange = function() {
+      	if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
 
 	</form>
  
@@ -26,7 +46,7 @@
     </div>
 
     <div class="col-sm-4">
-
+    	<h3>Posts</h3>
 
       <p>Lorem ipsum dolor..</p>
     </div>

@@ -30,11 +30,11 @@
     }
     
     /* Set black background color, white text and some padding */
-    footer {
+    /*footer {
       background-color: #555;
       color: white;
       padding: 15px;
-    }
+    }*/
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
@@ -61,25 +61,21 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
 }
 </script>
-<style>
-img{
-        
-        display: block; /* remove extra space below image */
-    }
-    </style>
+
 
 </head>
         <body>
-          <img src= "<?php echo base_url();?>assets/images/Team.jpg" alt="">
+          
 
-              <div class="jumbotron text-center" style="margin-bottom:0" >
+              <div class="jumbotron text-center" style="margin-bottom:0">
+
   <h1>OLD GOLD FANZONE</h1>
   <p>Wolverhampton Wanderers FC Fan Website</p> 
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
   
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <button class="navbar-toggler" type="button" .hover data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">

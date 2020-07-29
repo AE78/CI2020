@@ -1,6 +1,6 @@
 
 <div class="jumbotron text-center">
-  <h1 img src= "<?php echo base_url();?>assets/images/Molineux-inside.jpg" alt="">The Blog</h1>
+  <h1>The Blog</h1>
   <p>Lets Talk Wolves Then!</p>
 </div>
 
@@ -45,7 +45,7 @@
 </script>
 </form>
 
-<
+
 
 
 </div>
@@ -55,17 +55,20 @@
 
 	<div class="col-sm-4">
     	<h3>Posts</h3>
-    	<p>Lorem ipsum dolor..</p>
+		<div>
+			<?php
+				$com_query = "SELECT * FROM news WHERE id = ''";
+			?>			
+
+		</div>
+
+
+		    	
     </div>
 </div>
 
     
-<div class="container">
-    <div class="col-sm-4">
-      <h3>Popular Post</h3>
-      <p>Lorem ipsum dolor..</p>
-	</div>
-</div>
+
 
 
 

@@ -81,7 +81,7 @@ function showPosition(position) {
 	
 		<div id="MolMap" margin-top="30px">
 			<p>We are here</p>
-			<img src="MolMapAirView.jpg" class="rounded" alt="MolineuxMap" width="304" height="236">
+			<img src= "<?php echo base_url();?>assets/images/Molineux-inside.jpg" alt="">
 		</div>
 	
 <div id="MolPicandCoords"></div>

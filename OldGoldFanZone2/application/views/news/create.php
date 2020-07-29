@@ -1,25 +1,30 @@
 
 <div class="jumbotron text-center">
-  <h1>The Blog</h1>
+  <h1 img src= "<?php echo base_url();?>assets/images/Molineux-inside.jpg" alt="">The Blog</h1>
   <p>Lets Talk Wolves Then!</p>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-    	
+
       <h3>Post Something</h3>
       
 		<?php echo validation_errors(); ?>
 		<?php echo form_open('news/create'); ?>
 <span id="txtHint"></span>
+    <div class="form-group">
     <label for="title">Title</label>
-    <input type="text" name="title" onkeyup="showHint(this.value)"/>
+    <input type="text" name="title" class="form-control" onfocus="this.value=''" onkeyup="showHint(this.value)"/>
+</div>
     <br>
+ <div class="form-group"> 
     <label for="text">Text</label>
-    <textarea name="text"></textarea>
+    <textarea class="form-control" name="text" rows="5" id="text" onfocus="this.value=''"></textarea>
     <br>
-    <input type="submit" name="submit" value="Post" />
+    <input type="submit" class="btn btn-warning"  name="submit" value="Post" />
+</div>
+
 
     <script>
 	function showHint(str) {
@@ -38,24 +43,28 @@
   }
 }
 </script>
+</form>
 
-	</form>
+<
+
+
+</div>
  
 
-      
-    </div>
+<div class="container">
 
-    <div class="col-sm-4">
+	<div class="col-sm-4">
     	<h3>Posts</h3>
-
-      <p>Lorem ipsum dolor..</p>
+    	<p>Lorem ipsum dolor..</p>
     </div>
+</div>
 
+    
+<div class="container">
     <div class="col-sm-4">
       <h3>Popular Post</h3>
       <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
+	</div>
 </div>
 
 

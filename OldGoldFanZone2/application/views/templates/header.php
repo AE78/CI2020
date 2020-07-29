@@ -19,6 +19,33 @@
 
   </style>
 
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+
   <script>
 function allowDrop(ev) {
   ev.preventDefault();
@@ -34,11 +61,18 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
 }
 </script>
+<style>
+img{
+        
+        display: block; /* remove extra space below image */
+    }
+    </style>
 
 </head>
         <body>
+          <img src= "<?php echo base_url();?>assets/images/Team.jpg" alt="">
 
-              <div class="jumbotron text-center" style="margin-bottom:0">
+              <div class="jumbotron text-center" style="margin-bottom:0" >
   <h1>OLD GOLD FANZONE</h1>
   <p>Wolverhampton Wanderers FC Fan Website</p> 
 </div>
@@ -76,3 +110,4 @@ function drop(ev) {
   <p>Please report any issues directly to me at A.A.Edwards@wlv.ac.uk</p>
 </details>
 </div>
+

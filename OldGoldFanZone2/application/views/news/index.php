@@ -1,4 +1,4 @@
-<!--<h2><?php echo $title; ?></h2>
+<h2><?php echo $title; ?></h2>
 
 <?php foreach ($news as $news_item): ?>
 
@@ -8,7 +8,7 @@
         </div>
         <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
 
-<?php endforeach; ?>-->
+<?php endforeach; ?>
 
 <!--Here, each news item is looped and displayed to the user. You can see we wrote our template in PHP mixed with HTML. If you prefer to use a template language, you can use CodeIgniter’s Template Parser class or a third party parser.
 

@@ -4,84 +4,118 @@
 
 </div>
 
+<!--<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &q=" allowfullscreen>
+</iframe>-->
 
-<!--Google Maps as an added feature, put a picture of Molineux and put an arrow pointing to its location-->
-<div container-fluid>
-	<a>
-	<div id="map" style="width:400px;height:400px;background:yellow"></div>
+<div id="LongLat">
+	<p>Where are you?</p>
+<p>Click the button to get your coordinates.</p>
 
-	<script>
-		function myMap() {
-		var mapOptions = {
-		    center: new google.maps.LatLng(51.5, -0.12),
-		    zoom: 10,
-		    mapTypeId: google.maps.MapTypeId.HYBRID
-		}
-		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-		}
-	</script>
+<button onclick="getLocation()">Try It</button>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<p id="demo"></p>
 
-	<div id="geolocation">
-	<!--Geolocation script - use this for Mobile with auto device detection and responsive layout with Bootstrap-->
+<script>
+var x = document.getElementById("demo");
 
-	<a href="#" id="find_location">Geolcation</a>
-	<div id="geomap">
-		<iframe src="geo_google_map" style="height:300px;width:400px"></iframe>
-	</div>
-		<script>
-			var l = function(position) {
-			var	lat = position.coords.latitude,
-				long = position.coords.logitude,
-				coords = lat + ',' + long;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
-				document.getElementById('geo_google_map').setAttribute('src', 'https://maps.google.co.uk/q=' + coords + '& 'z=50&output=embed
-					);
-			}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
 
-			document.getElementById('find_location').onclick = function() {
-				navigator.geolocation.getCurrentPosition(l);
-				return false;
-			}
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
 
-		</script>
-
-
-	<p>Click the button to get your coordinates.</p>
-
-	<button onclick="getLocation()">Locate</button>
-
-	<p id="demo"></p>
-
-	<script>
-		var x = document.getElementById("demo");
-		function getLocation() {
-  		if (navigator.geolocation) {
-    	navigator.geolocation.getCurrentPosition(showPosition);
-  		} else {
-    	x.innerHTML = "Geolocation is not supported by this browser.";
-  			}
-		}
-
-		function showPosition(position) {
-  		x.innerHTML = "Latitude: " + position.coords.latitude +
-  		"<br>Longitude: " + position.coords.longitude;
-		}
-
-		function showPosition(position) {
+function showPosition(position) {
   var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
-  "+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyAsWlHyDBNk6Yk7GqwpwBMZIDZN4LagdIM";
+  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyAsWlHyDBNk6Yk7GqwpwBMZIDZN4LagdIM";
 
   document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
-
-
-	</script>
-
+</script>
+<script>
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 	<!--API KEY - AIzaSyAsWlHyDBNk6Yk7GqwpwBMZIDZN4LagdIM -->
+
+<div class="jumbotron text-center">
+
+	<div class="container">
+		<div id="MolMap" margin-top="30px">
+			<p>We are here</p>
+			<img src="MolMapAirView.jpg" class="rounded" alt="MolineuxMap" width="304" height="236">
+		</div>
+	</div>
+
+<div id="MolPicandCoords"></div>
+	
+
+<table>
+ 
+  <tr>
+    <td>Latitude :</td>
+    <td>52.5904</td>
+   
+  </tr>
+  <tr>
+    <td>Longitude :</td>
+    <td>-2.13061</td>
+    
+  </tr>
+  <tr>
+    <td>DMS coordinates:</td>
+    <td>52°35'25.44" N 2°7'50.196" W</td>
+    
+  </tr>
+  <tr>
+    <td>OS Grid Coordinates:</td>
+    <td>SO912991</td>
+    
+  </tr>
+  <tr>
+    <td>UTM coordinates (WGS84):</td>
+    <td>Zone 30U E: 558895.15 N: 5827062.42</td>
+  </tr>
+</table>
 
 </div>
 
